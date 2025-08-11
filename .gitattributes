@@ -31,3 +31,6 @@
 *.dll  binary
 *.exe  binary
 *.pdb  binary
+
+
+*.cshtml linguist-language=C#
