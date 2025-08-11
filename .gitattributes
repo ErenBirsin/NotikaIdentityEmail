@@ -33,4 +33,10 @@
 *.pdb  binary
 
 
+wwwroot/* linguist-vendored
+**/wwwroot/** linguist-vendored
+**/*.css linguist-vendored
+**/*.js  linguist-vendored
+**/*.html linguist-vendored
+
 *.cshtml linguist-language=C#
