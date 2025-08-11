@@ -1,0 +1,15 @@
+﻿@model List<Category>
+
+<div class="inbox-status">
+    <ul class="inbox-st-nav">
+
+
+
+        @foreach(var item in Model)
+        {
+            <li><a href="/Message/GetMessageListByCategory/@item.CategoryId"><i class="@item.CategoryIconUrl"></i> @item.CategoryName</a></li>
+        }
+       
+        
+    </ul>
+</div>

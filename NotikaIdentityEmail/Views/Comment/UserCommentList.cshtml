@@ -1,0 +1,131 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model List<Comment>
+
+@{
+    ViewData["Title"] = "Yorum Listesi";
+    Layout = "~/Views/UserLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="form-element-area py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-element-list p-4 bg-white rounded shadow-sm">
+
+                    <div class="basic-tb-hd mb-4 pb-2 border-bottom">
+                        <h2 class="text-dark fw-bold">Yorum Listesi</h2>
+                        <p class="text-muted">Sistemdeki tüm yorumları buradan yönetebilirsiniz.</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            @if (!Model.Any())
+                            {
+                                <div class="alert alert-info text-center my-4" role="alert">
+                                    <h4 class="alert-heading">Henüz hiç yorum yapılmamış!</h4>
+                                    <p>Görüntülenecek herhangi bir yorum kaydı bulunamadı.</p>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-bordered align-middle">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th scope="col" style="width: 50px;">#</th>
+                                                <th scope="col">Kullanıcı Adı</th>
+                                                <th scope="col">Yorum Detayı</th>
+                                                <th scope="col">Durum</th>
+                                                <th scope="col" style="width: 100px;">Sil</th>
+                                                <th scope="col" style="width: 100px;">Toksik İşaretle</th>
+                                                <th scope="col" style="width: 120px;">Onay/Pasif Yap</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model)
+                                            {
+                                                count++;
+                                                <tr>
+                                                    <td>@count</td>
+                                                    <td class="fw-bold">@item.AppUser.Name @item.AppUser.SurName</td>
+                                                    <td>
+                                                        <span class="d-inline-block text-truncate" style="max-width: 300px;">@item.CommentDetail</span>
+                                                    </td>
+                                                    <td>
+                                                        @{
+                                                            string statusClass = "badge";
+                                                            string currentStatusText = item.CommentStatus?.ToString() ?? "Bilinmiyor";
+
+                                                            switch (currentStatusText.ToLower())
+                                                            {
+                                                                case "yorum onaylandı":
+                                                                    statusClass += " bg-success";
+                                                                    break;
+                                                                case "yorum silindi":
+                                                                    statusClass += " bg-danger";
+                                                                    break;
+                                                                case "toksik yorum":
+                                                                    statusClass += " bg-dark";
+                                                                    break;
+                                                                case "onay bekliyor":
+                                                                    statusClass += " bg-warning text-dark";
+                                                                    break;
+                                                                default:
+                                                                    statusClass += " bg-secondary";
+                                                                    break;
+                                                            }
+                                                        }
+                                                        <span class="@statusClass">@currentStatusText</span>
+                                                    </td>
+                                                    <td>
+                                                        @if (currentStatusText.ToLower() != "yorum silindi")
+                                                        {
+                                                            <a href="/Comment/DeleteComment/@item.CommentId/" class="btn btn-danger btn-sm w-100">Sil</a>
+                                                        }
+                                                        else
+                                                        {
+                                                            <button class="btn btn-secondary btn-sm w-100" disabled>Silindi</button>
+                                                        }
+                                                    </td>
+                                                    <td>
+                                                        @if (currentStatusText.ToLower() != "toksik yorum" && currentStatusText.ToLower() != "yorum silindi")
+                                                        {
+                                                            <a href="/Comment/CommentStatusChangeToToxic/@item.CommentId/" class="btn btn-info btn-sm w-100">Toksik</a>
+                                                        }
+                                                        else
+                                                        {
+                                                            <button class="btn btn-secondary btn-sm w-100" disabled>Toksik</button>
+                                                        }
+                                                    </td>
+                                                    <td>
+                                                        @{
+                                                            string currentStatusForAction = item.CommentStatus?.ToString() ?? "";
+                                                        }
+
+                                                        @if (currentStatusForAction.ToLower() == "yorum onaylandı")
+                                                        {
+                                                            <a href="/Comment/CommentStatusChangeToPassive/@item.CommentId/" class="btn btn-warning btn-sm w-100">Pasif Yap</a>
+                                                        }
+                                                        else if (currentStatusForAction.ToLower() == "yorum silindi" || currentStatusForAction.ToLower() == "toksik yorum")
+                                                        {
+                                                            <button class="btn btn-secondary btn-sm w-100" disabled>İşlem Yok</button>
+                                                        }
+                                                        else
+                                                        {
+                                                            <a href="/Comment/CommentStatusChangeToActive/@item.CommentId/" class="btn btn-primary btn-sm w-100">Onayla</a>
+                                                        }
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

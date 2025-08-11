@@ -1,0 +1,169 @@
+﻿@model NotikaIdentityEmail.Entities.Category
+@{
+    ViewData["Title"] = "Kategori Güncelle";
+    Layout = "~/Views/UserLayout/Index.cshtml";
+}
+
+<style>
+    .card {
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        margin-bottom: 20px;
+        background-color: #fff;
+    }
+
+    .card-header {
+        background-color: #f8f9fa;
+        padding: 15px 20px;
+        border-bottom: 1px solid #e9ecef;
+        font-weight: bold;
+        color: #343a40;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+        .form-control:focus {
+            color: #495057;
+            background-color: #fff;
+            border-color: #80bdff;
+            outline: 0;
+            box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+        }
+
+    .form-check {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: .5rem;
+        margin-bottom: 1rem;
+    }
+
+    .form-check-input {
+        width: 1.2em;
+        height: 1.2em;
+    }
+
+    .form-check-label {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    .btn {
+        display: inline-block;
+        font-weight: 400;
+        color: #fff;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        background-color: transparent;
+        border: 1px solid transparent;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: .25rem;
+        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+
+    .text-danger {
+        color: #dc3545 !important;
+        font-size: 0.875em;
+        margin-top: .25rem;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+</style>
+
+<div class="form-element-area py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="mb-0">Kategori Güncelle</h2>
+                        <p class="mb-0 text-muted">Kategori bilgilerini güncellemek için aşağıdaki formu doldurun.</p>
+                    </div>
+                    <div class="card-body">
+                        <form asp-action="UpdateCategory" asp-controller="Category" method="post">
+                            <input type="hidden" asp-for="CategoryId" />
+
+                            <div class="form-group">
+                                <label for="CategoryName">Kategori Adı</label>
+                                <input type="text" asp-for="CategoryName" class="form-control" placeholder="Kategori Adı" required />
+                                <span asp-validation-for="CategoryName" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="CategoryIconUrl">Kategori İkon URL'si</label>
+                                <input type="text" asp-for="CategoryIconUrl" class="form-control" placeholder="İkon URL'si (Örn: /images/icons/myicon.png)" />
+                                <span asp-validation-for="CategoryIconUrl" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input type="checkbox" asp-for="CategoryStatus" class="form-check-input" id="categoryStatusCheckbox" />
+                                    <label class="form-check-label" for="categoryStatusCheckbox">Aktif Mi?</label>
+                                </div>
+                                <span asp-validation-for="CategoryStatus" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group text-right">
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Güncelle</button>
+                                <a href="/Category/CategoryList" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Geri Dön</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

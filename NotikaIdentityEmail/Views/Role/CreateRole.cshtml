@@ -1,0 +1,49 @@
+﻿@using NotikaIdentityEmail.Models.IdentityModels
+@model CreateRoleViewModel
+@{
+	ViewData["Title"] = "CreateRole";
+	Layout = "~/Views/UserLayout/Index.cshtml";
+}
+
+
+<div class="form-element-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="form-element-list">
+					<div class="basic-tb-hd">
+						<h2>Rol Oluşturma Sayfası</h2>
+						<p>Oluşturmak istediğiniz rol adını aşağıdaki kutucuğa girebilirsiniz.</p>
+					</div>
+					<form method="post">
+						<div class="row">
+
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="form-group">
+									<div class="nk-int-st">
+										<input type="text" class="form-control" asp-for="RoleName" placeholder="Rol">
+									</div>
+								</div>
+							</div>
+
+
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="form-group">
+									<div class="nk-int-st">
+										<button class="btn btn-primary">Rolü Oluştur</button>
+									</div>
+								</div>
+							</div>
+
+
+
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+

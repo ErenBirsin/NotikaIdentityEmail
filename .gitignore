@@ -1,0 +1,57 @@
+# ----- Build outputs -----
+[Bb]in/
+[Oo]bj/
+[Aa]rtifacts/
+[Bb]uild/
+
+# ----- IDE/Editor -----
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.DotSettings.user
+
+# ----- ASP.NET Core / Config -----
+# Üretimde sırları commit etme. Development/local varyantları ignore edilir.
+appsettings.Development.json
+appsettings.*.local.json
+secrets.json
+
+# ----- Logs / Diagnostics -----
+*.log
+logs/
+LogFiles/
+TestResults/
+*.trx
+*.coverage*
+
+# ----- Packages / Publish -----
+packages/
+*.nupkg
+*.snupkg
+*.nuspec
+PublishProfiles/
+*.publishsettings
+
+# ----- Tools / Analyzer -----
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.orig
+
+# ----- Node (varsa) -----
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ----- OS Çöpleri -----
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+

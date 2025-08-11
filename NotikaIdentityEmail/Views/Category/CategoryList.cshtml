@@ -1,0 +1,147 @@
+﻿@model List<Category>
+@{
+    ViewData["Title"] = "Kategori Listesi";
+    Layout = "~/Views/UserLayout/Index.cshtml";
+    int count = 0;
+}
+
+<style>
+    .card {
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        margin-bottom: 20px;
+        background-color: #fff;
+    }
+
+    .card-header {
+        background-color: #f8f9fa;
+        padding: 15px 20px;
+        border-bottom: 1px solid #e9ecef;
+        font-weight: bold;
+        color: #343a40;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: rgba(0,0,0,.02);
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: rgba(0,0,0,.075);
+    }
+
+    .status-badge {
+        padding: .25em .4em;
+        font-size: 75%;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: .25rem;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+    .status-true {
+        color: #fff;
+        background-color: #28a745;
+    }
+
+    .status-false {
+        color: #fff;
+        background-color: #6c757d;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 8px 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+</style>
+
+<div class="form-element-area py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="mb-0">Kategori Listesi</h2>
+                        <p class="mb-0 text-muted">Sistemdeki tüm kategorileri buradan yönetebilirsiniz.</p>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <input type="text" class="search-input" placeholder="Kategori ara..." aria-label="Kategori ara">
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <a href="/Category/CreateCategory" class="btn btn-primary">
+                                    <i class="fa fa-plus-circle"></i> Yeni Kategori Ekle
+                                </a>
+                            </div>
+                        </div>
+
+                        @if (!Model.Any())
+                        {
+                            <div class="alert alert-info text-center my-4" role="alert">
+                                <h4 class="alert-heading">Henüz hiç kategori eklenmemiş!</h4>
+                                <p>Görüntülenecek herhangi bir kategori kaydı bulunamadı. Yeni bir kategori oluşturmak için yukarıdaki butonu kullanın.</p>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="table-responsive">
+                                <table class="table table-hover table-bordered align-middle">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th scope="col" style="width: 50px;">#</th>
+                                            <th scope="col">Kategori Adı</th>
+                                            <th scope="col" class="text-center">Durum</th>
+                                            <th scope="col" class="text-center" style="width: 80px;">Sil</th>
+                                            <th scope="col" class="text-center" style="width: 80px;">Güncelle</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            count++;
+                                            <tr>
+                                                <td>@count</td>
+                                                <td class="fw-bold">@item.CategoryName</td>
+                                                <td class="text-center">
+                                                    @{
+                                                        string statusText = item.CategoryStatus ? "Aktif" : "Pasif";
+                                                        string statusBadgeClass = item.CategoryStatus ? "status-badge status-true" : "status-badge status-false";
+                                                    }
+                                                    <span class="@statusBadgeClass">@statusText</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="/Category/DeleteCategory/@item.CategoryId/" class="btn btn-danger btn-sm" title="Sil" onclick="return confirm('@item.CategoryName adlı kategoriyi silmek istediğinizden emin misiniz?');">
+                                                        <i class="fa fa-trash"></i>
+                                                    </a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="/Category/UpdateCategory/@item.CategoryId/" class="btn btn-info btn-sm" title="Güncelle">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

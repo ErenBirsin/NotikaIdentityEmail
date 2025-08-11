@@ -1,0 +1,111 @@
+﻿@model Message
+@{
+    ViewData["Title"] = "ComposeMessage";
+    Layout = "~/Views/UserLayout/Index.cshtml";
+}
+
+
+
+<div class="inbox-area">
+    <div class="container">
+        <div class="row">
+            @await Component.InvokeAsync("_MessageSideBarComponentPartial")
+
+            <form method="post">
+            <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                <div class="view-mail-list sm-res-mg-t-30">
+                    <div class="view-mail-hd">
+                        <div class="view-mail-hrd">
+                            <h2>Yeni Mesaj Oluşturun</h2>
+                        </div>
+                    </div>
+                    <div class="cmp-int mg-t-20">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                <div class="cmp-int-lb cmp-int-lb1 text-right">
+                                    <span>Email: </span>
+                                </div>
+                            </div>
+                            <div class="col-lg-11 col-md-10 col-sm-10 col-xs-12">
+                                <div class="form-group">
+                                    <div class="nk-int-st cmp-int-in cmp-email-over">
+                                        <input type="email" class="form-control" asp-for="ReceiverEmail" placeholder="test@email.com" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                <div class="cmp-int-lb cmp-int-lb1 text-right">
+                                    <span>Kategori: </span>
+                                </div>
+                            </div>
+                            <div class="col-lg-11 col-md-10 col-sm-10 col-xs-12">
+                                <div class="form-group">
+                                    <div class="nk-int-st cmp-int-in cmp-email-over">
+                                       <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.v">
+                                          <option value=""> -- Kategori Seçiniz --</option>
+                                       </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                <div class="cmp-int-lb text-right">
+                                    <span>Konu: </span>
+                                </div>
+                            </div>
+                            <div class="col-lg-11 col-md-10 col-sm-10 col-xs-12">
+                                <div class="form-group cmp-em-mg">
+                                    <div class="nk-int-st cmp-int-in cmp-email-over">
+                                        <input type="text" class="form-control" asp-for="Subject"  />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cmp-int-box mg-t-20">
+                        <div class="form-group">
+                            <textarea asp-for="MessageDetail" placeholder="Mesajınızı buraya yazabilirsiniz" class="form-control summernote"></textarea>
+                        </div>
+                    </div>
+
+                   
+                    <button class="btn btn-info">Mesajı Gönder</button>
+
+                   
+                    <div class="vw-ml-action-ls text-right mg-t-20">
+                        <div class="btn-group ib-btn-gp active-hook nk-email-inbox">
+                            <button class="btn btn-default btn-sm waves-effect"><i class="notika-icon notika-next"></i> Yanıtla</button>
+                            <button class="btn btn-default btn-sm waves-effect"><i class="notika-icon notika-right-arrow"></i> Yönlendir</button>
+                            <button class="btn btn-default btn-sm waves-effect"><i class="notika-icon notika-print"></i> Yazdır</button>
+                            <button class="btn btn-default btn-sm waves-effect"><i class="notika-icon notika-trash"></i> Sil</button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!-- Summernote CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-bs4.min.css" rel="stylesheet" />
+
+<!-- jQuery + Bootstrap + Summernote JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-bs4.min.js"></script>
+
+
+<script>
+
+    $(document).ready(function () {
+        $('.summernote').summernote({
+            height: 250
+        });
+    });
+
+</script>

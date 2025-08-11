@@ -1,0 +1,28 @@
+﻿<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+    <div class="inbox-left-sd">
+        <div class="compose-ml">
+            <a class="btn" href="/Message/ComposeMessage/">Yeni Mesaj Oluştur</a>
+        </div>
+        <div class="inbox-status">
+            <ul class="inbox-st-nav inbox-ft">
+                <li><a href="/Message/Inbox/"><i class="notika-icon notika-mail"></i> Gelen Kutusu<span class="pull-right">@ViewBag.receiveMessageCount</span></a></li>
+                <li><a href="/Message/Sendbox/"><i class="notika-icon notika-sent"></i> Giden Kutusu<span class="pull-right">@ViewBag.sendMessageCount</span></a></li>
+                <li><a href="/Message/Draft/"><i class="notika-icon notika-draft"></i> Taslaklar<span class="pull-right">12</span></a></li>
+                <li><a href="/Message/Trash/"><i class="notika-icon notika-trash"></i> Silinenler<span class="pull-right">12</span></a></li>
+            </ul>
+        </div>
+        <hr>
+        @await Component.InvokeAsync("_MessageCategoryListSideBarComponentPartial")
+       
+        <hr>
+        <div class="inbox-status">
+            <ul class="inbox-st-nav inbox-nav-mg">
+                <li><a href="#"><i class="notika-icon notika-success"></i> Forum</a></li>
+                <li><a href="#"><i class="notika-icon notika-chat"></i> Chat</a></li>
+                <li><a href="#"><i class="notika-icon notika-star"></i> İş Akışı</a></li>
+                <li><a href="#"><i class="notika-icon notika-settings"></i> Ayarlar</a></li>
+                <li><a href="#"><i class="notika-icon notika-support"></i> Destek</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

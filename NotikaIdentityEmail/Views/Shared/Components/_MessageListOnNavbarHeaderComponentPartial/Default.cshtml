@@ -1,0 +1,29 @@
+﻿ @model List<MessageListWithUsersInfoViewModel>
+
+<li class="nav-item dropdown">
+    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
+    <div role="menu" class="dropdown-menu message-dd animated zoomIn">
+        <div class="hd-mg-tt">
+            <h2>Mesajlar</h2>
+        </div>
+        <div class="hd-message-info">
+            @foreach (var item in Model)
+            {
+                <a href="#">
+                    <div class="hd-message-sn">
+                        <div class="hd-message-img">
+                            <img src="@item.ProfileImageUrl" alt="" />
+                        </div>
+                        <div class="hd-mg-ctn">
+                            <h3>@item.FullName</h3>
+                            <p>@item.MessageDetail</p>
+                        </div>
+                    </div>
+                </a>
+            }
+        </div>
+        <div class="hd-mg-va">
+            <a href="/Message/Inbox/">Tümünü Gör</a>
+        </div>
+    </div>
+</li>

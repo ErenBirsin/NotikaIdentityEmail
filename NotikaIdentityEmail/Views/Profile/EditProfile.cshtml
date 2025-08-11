@@ -1,0 +1,121 @@
+﻿@using NotikaIdentityEmail.Models.IdentityModels
+@model UserEditViewModel
+@{
+    ViewData["Title"] = "EditProfile";
+    Layout = "~/Views/UserLayout/Index.cshtml";
+}
+
+<div class="form-element-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-element-list">
+                    <div class="basic-tb-hd">
+                        <h2>Profilini Düzenle</h2>
+                        <p>Bilgileri eksiksiz olarak güncelleme işlemini yapabilirsiniz.</p>
+                    </div>
+                    <form method="post">
+                    <div class="row">
+                        
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <div class="nk-int-st">
+                                    <input type="text" class="form-control" asp-for="Name" placeholder="Adınız">
+                                </div>
+                            </div>
+                        </div>
+
+
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <div class="nk-int-st">
+                                        <input type="text" class="form-control" asp-for="Surname" placeholder="Soyadınız">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <div class="nk-int-st">
+                                        <input type="text" class="form-control" asp-for="City" placeholder="Şehriniz">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <div class="nk-int-st">
+                                        <input type="text" class="form-control" asp-for="ImageUrl" placeholder="Fotoğraf URL Bilgisi">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <div class="nk-int-st">
+                                        <input type="text" class="form-control" asp-for="UserName" placeholder="Kullanıcı Adınız">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control" asp-for="Email" placeholder="Email Adresiniz">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control" asp-for="PhoneNumber" placeholder="Telefon Numaranız">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <div class="nk-int-st">
+                                        <input type="password" class="form-control" asp-for="Password" placeholder="Şifreniz">
+                                </div>
+                            </div>
+                        </div>
+
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="nk-int-st">
+                                        <input type="password" class="form-control" asp-for="PasswordConfirm" placeholder="Şifre Tekrar">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="nk-int-st">
+                                        <button class="btn btn-success">Bilgileri Güncelle</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                           
+
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+

@@ -1,0 +1,18 @@
+﻿<div class="comment-form mt-4">
+    <div class="card shadow-sm rounded">
+        <div class="card-header bg-primary text-white p-3 rounded-top">
+            <h4 class="mb-0 fw-bold">📝 Yeni Yorum Ekle</h4>
+        </div>
+        <div class="card-body p-4">
+            <form asp-action="CreateComment" asp-controller="Comment" method="post">
+                <div class="mb-4">
+                    <label for="CommentDetail" class="form-label fw-bold mb-2">Yorumunuz</label>
+                    <textarea name="CommentDetail" id="CommentDetail" class="form-control form-control-lg" rows="5" placeholder="Yorumunuzu buraya yazın..." required></textarea>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success btn-lg">Yorumu Gönder</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

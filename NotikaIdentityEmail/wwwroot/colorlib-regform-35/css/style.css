@@ -1,0 +1,381 @@
+/*body {
+	margin:  0;
+}
+.page-content {
+	width: 100%;
+	margin:  0 auto;
+	background: #4077c8;
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+	-o-justify-content: center;
+	-ms-justify-content: center;
+	-moz-justify-content: center;
+	-webkit-justify-content: center;
+	align-items: center;
+	-o-align-items: center;
+	-ms-align-items: center;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+}
+.form-v9-content  {
+	width: 975px;
+	border-radius: 15px;
+	-o-border-radius: 15px;
+	-ms-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	margin: 185px 0;
+	font-family: 'Nunito', sans-serif;
+	color: #fff;
+	font-weight: 700;
+	font-size: 16px;
+	position: relative;
+}
+.form-v9-content .form-detail {
+    padding: 30px 135px 30px 100px;
+	position: relative;
+}
+.form-v9-content .form-detail h2 {
+	font-size: 35px;
+	text-align: center;
+	position: relative;
+	padding: 16px 0 13px;
+	margin-bottom: 55px;
+}
+.form-v9-content .form-detail h2::after {
+	background: #fff;
+	width: 73px;
+	height: 3px;
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+    transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+}
+.form-v9-content .form-row-total {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    -o-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -webkit-justify-content: space-between;
+}
+.form-v9-content .form-row {
+    width: 45%;
+}
+.form-v9-content .form-detail .form-row-last {
+	text-align: center;
+}
+.form-v9-content .form-detail .input-text {
+	margin-bottom: 45px;
+}
+.form-v9-content .form-detail input {
+	width: 100%;
+    padding: 14.5px 0px 14.5px 30px;
+    border: 2px solid #ccc;
+    appearance: unset;
+    -moz-appearance: unset;
+    -webkit-appearance: unset;
+    -o-appearance: unset;
+    -ms-appearance: unset;
+    outline: none;
+    -moz-outline: none;
+    -webkit-outline: none;
+    -o-outline: none;
+    -ms-outline: none;
+    border-radius: 27.5px;
+	-o-border-radius: 27.5px;
+	-ms-border-radius: 27.5px;
+	-moz-border-radius: 27.5px;
+	-webkit-border-radius: 27.5px;
+	font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.2)
+}
+.form-v9-content .form-detail input:focus {
+	border: 2px solid #999;
+}
+.form-v9-content .form-detail .register {
+	background: #f25d5d;
+	border-radius: 25px;
+	-o-border-radius: 25px;
+	-ms-border-radius: 25px;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	width: 180px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	-o-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	-ms-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	border: none;
+	margin: 20px 0 73px 35px;
+	cursor: pointer;
+	font-family: 'Nunito', sans-serif;
+	color: #fff;
+	font-weight: 700;
+	font-size: 16px;
+}
+.form-v9-content .form-detail .register:hover {
+	background: #d95252;
+}
+.form-v9-content .form-detail .form-row-last input {
+	padding: 14px;
+}
+input::-webkit-input-placeholder {*/ /* Chrome/Opera/Safari */
+  /*color: #e5e5e5;
+  font-size: 16px;
+}
+input::-moz-placeholder {*/ /* Firefox 19+ */
+  /*color: #e5e5e5;
+  font-size: 16px;
+}
+input:-ms-input-placeholder {*/ /* IE 10+ */
+  /*color: #e5e5e5;
+  font-size: 16px;
+}
+input:-moz-placeholder {*/ /* Firefox 18- */
+  /*color: #e5e5e5;
+  font-size: 16px;
+}*/
+
+/* Responsive */
+/*@media screen and (max-width: 1199px) {
+	.form-v9-content {
+	    margin: 185px 20px;
+	}
+}
+@media screen and (max-width: 767px) {
+	.form-v9-content .form-row-total {
+		flex-direction: column;
+		-o-flex-direction: column;
+		-ms-flex-direction: column;
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+	}
+	.form-v9-content .form-row {
+		width: 100%;
+	}
+}
+@media screen and (max-width: 575px) {
+	.form-v9-content .form-detail {
+	    padding: 30px 45px 30px 10px;
+	}
+}*/
+
+
+
+body {
+	margin: 0;
+	font-family: 'Nunito', sans-serif; /* Nunito fontunu body'ye uygula */
+	background-color: #f0f2f5; /* Hafif gri bir arka plan */
+}
+
+.page-content {
+	width: 100%;
+	margin: 0 auto;
+	/* background: #4077c8; (Arka plan resmi olduðu için genellikle bu renk görülmez) */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh; /* Ekranýn tamamýný kaplamasýný saðlar */
+	padding: 20px; /* Kenarlardan boþluk býrakýr */
+	box-sizing: border-box; /* Padding'in geniþliðe dahil olmasýný saðlar */
+}
+
+.form-v9-content {
+	width: 975px; /* Orijinal geniþlik */
+	max-width: 100%; /* Duyarlýlýk için maksimum geniþlik */
+	border-radius: 20px; /* Daha modern yuvarlak köþeler */
+	margin: 80px 0; /* Sayfada daha ortalanmýþ durmasý için dikey marjý ayarla */
+	font-family: 'Nunito', sans-serif;
+	color: #fff;
+	font-weight: 700;
+	font-size: 16px;
+	position: relative;
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Daha belirgin bir gölge */
+	overflow: hidden; /* Taþmalarý gizler */
+	z-index: 0; /* ::before için referans nokta */
+}
+
+	/* Arka plan resminin üzerine yarý saydam katman */
+	.form-v9-content::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.5); /* Siyah, %50 þeffaf katman */
+		z-index: 1; /* Resmin üstünde ama formun altýnda */
+	}
+
+	.form-v9-content .form-detail {
+		padding: 70px 60px; /* Daha modern iç boþluklar */
+		position: relative;
+		z-index: 2; /* Form içeriði katmanýn üstünde olsun */
+		display: flex; /* Flexbox ile düzen */
+		flex-direction: column; /* Öðeleri dikey sýrala */
+		gap: 25px; /* Öðeler arasýnda boþluk */
+	}
+
+		.form-v9-content .form-detail h2 {
+			font-size: 42px; /* Daha büyük ve modern baþlýk */
+			font-weight: 800; /* Daha kalýn */
+			text-align: center;
+			position: relative;
+			padding: 16px 0 13px; /* Orijinal padding'i koru */
+			margin-bottom: 50px; /* Alt boþluðu artýr */
+			color: #fff; /* Baþlýk rengi */
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Hafif metin gölgesi */
+		}
+
+			.form-v9-content .form-detail h2::after {
+				background: #fff;
+				width: 73px;
+				height: 3px;
+				content: "";
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				transform: translateX(-50%);
+				-o-transform: translateX(-50%);
+				-ms-transform: translateX(-50%);
+				-moz-transform: translateX(-50%);
+				-webkit-transform: translateX(-50%);
+			}
+
+	.form-v9-content .form-row-total {
+		display: flex;
+		justify-content: space-between;
+		gap: 30px; /* Alanlar arasýna boþluk */
+		flex-wrap: wrap; /* Eðer sýðmazlarsa alt alta geçsinler */
+	}
+
+	.form-v9-content .form-row {
+		flex: 1; /* Eþit geniþlikte daðýlým */
+		min-width: 250px; /* Inputlarýn çok küçük olmasýný engelle */
+	}
+
+.input-text {
+	width: 100%;
+	padding: 15px 25px; /* Ýç boþluðu artýr ve yatayda biraz daha boþluk */
+	border: 1px solid rgba(255, 255, 255, 0.4); /* Hafif þeffaf kenarlýk */
+	border-radius: 27.5px; /* Orijinal yuvarlaklýðý koru */
+	background: rgba(255, 255, 255, 0.1); /* Hafif þeffaf arka plan */
+	color: #fff; /* Metin rengi */
+	font-size: 16px;
+	font-weight: 700;
+	outline: none; /* Odaklandýðýnda varsayýlan dýþ çizgiyi kaldýr */
+	margin-bottom: 0; /* Flexbox gap ile yönetildiði için kendi marginini kaldýr */
+	transition: all 0.3s ease; /* Tüm deðiþiklikler için yumuþak geçiþ */
+	box-sizing: border-box; /* Padding'in geniþliði etkilememesi için */
+}
+
+/* Input placeholder stilleri */
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 16px;
+}
+
+input::-moz-placeholder { /* Firefox 19+ */
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 16px;
+}
+
+input:-ms-input-placeholder { /* IE 10+ */
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 16px;
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 16px;
+}
+
+/* Input odaklanma (focus) stili */
+.form-v9-content .form-detail input:focus {
+	border-color: #7ED957; /* Odaklandýðýnda kenarlýk rengini deðiþtir (açýk yeþil) */
+	box-shadow: 0 0 0 3px rgba(126, 217, 87, 0.3); /* Hafif parlama efekti */
+	background-color: rgba(255, 255, 255, 0.2); /* Odaklandýðýnda arka planý biraz daha belirgin yap */
+}
+
+.form-v9-content .form-detail .form-row-last {
+	text-align: center;
+	margin-top: 30px; /* Butonun üstündeki boþluk */
+}
+
+.register { /* '.form-v9-content .form-detail' sýnýfýný kaldýrdým, daha kýsa olsun diye */
+	display: inline-block;
+	background-color: #7ED957; /* Canlý yeþil düðme rengi */
+	color: #fff; /* Düðme metni beyaz */
+	padding: 15px 40px; /* Düðme iç boþluðu */
+	border: none; /* Kenarlýk yok */
+	border-radius: 25px; /* Yuvarlak köþeler */
+	width: 180px; /* Orijinal geniþlik */
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Gölge */
+	margin: 0; /* Merkezi hizalamak için marjý kaldýr */
+	cursor: pointer; /* Fare imleci el iþareti */
+	font-family: 'Nunito', sans-serif;
+	font-weight: 700; /* Kalýn yazý */
+	font-size: 18px; /* Daha büyük yazý tipi */
+	transition: all 0.3s ease; /* Yumuþak geçiþler */
+	text-transform: uppercase; /* Metni büyük harf yap */
+	letter-spacing: 1px; /* Harf aralýðý */
+}
+
+	.register:hover {
+		background-color: #63C142; /* Hover'da daha koyu yeþil */
+		transform: translateY(-2px); /* Hafif yukarý hareket */
+		box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Gölgeyi derinleþtir */
+	}
+
+	.register:active {
+		transform: translateY(0); /* Týklanýldýðýnda eski konumuna döner */
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Daha hafif gölge */
+	}
+
+/* Responsive */
+@media screen and (max-width: 1199px) {
+	.form-v9-content {
+		margin: 80px 20px; /* Kenarlardan daha fazla boþluk */
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.form-v9-content .form-detail {
+		padding: 40px 30px; /* Ýç boþluðu azalt */
+	}
+
+	.form-v9-content .form-row-total {
+		flex-direction: column; /* Alanlarý alt alta sýrala */
+		gap: 20px; /* Alt alta gelen alanlar arasýna boþluk */
+	}
+
+	.form-v9-content .form-row {
+		width: 100%;
+	}
+
+	.form-v9-content .form-detail h2 {
+		font-size: 32px; /* Baþlýðý küçült */
+		margin-bottom: 30px;
+	}
+
+	.form-v9-content .form-detail .register {
+		padding: 12px 30px; /* Butonun dolgusunu azalt */
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.form-v9-content .form-detail {
+		padding: 30px 20px; /* Daha küçük ekranlar için iç boþluðu daha da azalt */
+	}
+}

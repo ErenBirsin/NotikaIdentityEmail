@@ -1,2 +1,33 @@
-# Auto detect text files and perform LF normalization
+# Normalize line endings for text files (LF in repo; Windows gets CRLF on checkout)
 * text=auto
+
+# Scripts
+*.sh  text eol=lf
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Solution/Project files as text
+*.sln     text
+*.csproj  text
+*.props   text
+*.targets text
+
+# Treat common binaries as binary (no diff/merge)
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.ttf  binary
+*.otf  binary
+*.woff binary
+*.woff2 binary
+*.eot  binary
+*.pdf  binary
+*.zip  binary
+*.7z   binary
+*.gz   binary
+*.dll  binary
+*.exe  binary
+*.pdb  binary

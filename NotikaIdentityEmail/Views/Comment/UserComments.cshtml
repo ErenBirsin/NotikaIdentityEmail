@@ -1,0 +1,72 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model List<Comment>
+
+@{
+    ViewData["Title"] = "Forum";
+    Layout = "~/Views/UserLayout/Index.cshtml";
+}
+
+<style>
+    .forum-post {
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        transition: 0.3s ease-in-out;
+    }
+
+        .forum-post:hover {
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+
+    .forum-author {
+        font-weight: bold;
+        font-size: 16px;
+        color: #2c3e50;
+    }
+
+    .forum-date {
+        font-size: 13px;
+        color: #888;
+        margin-left: 10px;
+    }
+
+    .forum-content {
+        font-size: 15px;
+        margin-top: 10px;
+        color: #333;
+    }
+</style>
+
+<div class="form-element-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-element-list">
+                    <div class="basic-tb-hd">
+                        <h2>🗨️ Forum</h2>
+                    </div>
+
+                    @foreach (var item in Model)
+                    {
+                        <div class="forum-post">
+                            <div>
+                                <span class="forum-author">@item.AppUser.Name @item.AppUser.SurName</span>
+                                <span class="forum-date">- @item.CommentDate.ToString("dd-MMM-yyyy")</span>
+                            </div>
+                            <div class="forum-content">
+                                @item.CommentDetail
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+		@await Html.PartialAsync("CreateComment","Comment")
+    </div>
+</div>
+
+
+

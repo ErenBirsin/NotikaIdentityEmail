@@ -1,0 +1,78 @@
+﻿@model Message
+@{
+	ViewData["Title"] = "MessageDetail";
+	Layout = "~/Views/UserLayout/Index.cshtml";
+}
+
+@{
+	var timeDiff = DateTime.Now - Model.SendDate;
+	string timeAgoText;
+
+	if (timeDiff.TotalMinutes < 1)
+	{
+		timeAgoText = "Şimdi";
+	}
+	else if (timeDiff.TotalMinutes < 60)
+	{
+		timeAgoText = $"{(int)timeDiff.TotalMinutes} Dakika Önce";
+	}
+	else if (timeDiff.TotalHours < 24)
+	{
+		timeAgoText = $"{(int)timeDiff.TotalHours} Saat Önce";
+	}
+	else if (timeDiff.TotalDays < 7)
+	{
+		timeAgoText = $"{(int)timeDiff.TotalDays} Gün Önce";
+	}
+	else if (timeDiff.TotalDays < 30)
+	{
+		timeAgoText = $"{(int)(timeDiff.TotalDays / 7)} Hafta Önce";
+	}
+	else
+	{
+		timeAgoText = Model.SendDate.ToString("dd MMMM yyyy");
+	}
+}
+
+<div class="inbox-area">
+	<div class="container">
+		<div class="row">
+			@await Component.InvokeAsync("_MessageSideBarComponentPartial")
+
+			<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+				<div class="view-mail-list sm-res-mg-t-30">
+					<div class="view-mail-hd">
+						<div class="view-mail-hrd">
+							<h2>Mesaj Detayları </h2>
+						</div>
+						<div class="view-ml-rl">
+							<p>@Model.SendDate.ToString("HH:mm") (<span style="color:#6c757d">@timeAgoText</span>)</p>
+						</div>
+					</div>
+					<div class="mail-ads mail-vw-ph">
+						<p class="first-ph"><b>Konu: </b>@Model.Subject</p>
+						<p><b>Email:</b> <a href="#">@Model.SenderEmail</a></p>
+						<p class="last-ph"><b>Tarih:</b> @Model.SendDate.ToString("dd MMMM yyyy")</p>
+					</div>
+					<div class="view-mail-atn">
+
+						<p>@Html.Raw(Model.MessageDetail)</p>
+
+					</div>
+
+					<div class="vw-ml-action-ls text-right mg-t-20">
+						<div class="btn-group ib-btn-gp active-hook nk-email-inbox">
+							<button class="btn btn-default btn-sm waves-effect"><i class="notika-icon notika-next"></i> Yanıtla</button>
+							<button class="btn btn-default btn-sm waves-effect"><i class="notika-icon notika-right-arrow"></i> Yönlendir</button>
+							<button class="btn btn-default btn-sm waves-effect"><i class="notika-icon notika-print"></i> Yazdır</button>
+							<button class="btn btn-default btn-sm waves-effect"><i class="notika-icon notika-trash"></i> Sil</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+

@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html class="no-js" lang="">
+
+@await Component.InvokeAsync("_HeadUserLayoutComponentPartial")
+<body>
+
+    @await Component.InvokeAsync("_HeaderUserLayoutComponentPartial")
+
+    @await Component.InvokeAsync("_MobileMenuUserLayoutComponentPartial")
+
+    @await Component.InvokeAsync("_NavbarUserLayoutComponentPartial")
+
+    @await Component.InvokeAsync("_BreadCombUserLayoutComponentPartial")
+
+    @RenderBody()
+
+    @await Component.InvokeAsync("_FooterUserLayoutComponentPartial")
+
+    @* Bu satırı buraya ekleyin! *@
+    @RenderSection("Scripts", required: false)
+
+</body>
+
+</html>

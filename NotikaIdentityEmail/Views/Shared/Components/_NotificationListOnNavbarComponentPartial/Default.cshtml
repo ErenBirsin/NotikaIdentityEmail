@@ -1,0 +1,31 @@
+﻿@model List<Notification>
+@{
+    int count = 0;
+}
+<div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
+    <div class="hd-mg-tt">
+        <h2>Bildirimler</h2>
+    </div>
+    <div class="hd-message-info">
+        @foreach(var item in Model)
+        {
+            count++;
+            <a href="#">
+                <div class="hd-message-sn">
+                    <div class="hd-message-img">
+                        <img src="@item.ImageUrl" alt="" />
+                    </div>
+                    <div class="hd-mg-ctn">
+                        <h3>Bildirim - @count</h3>
+                        <p>@item.Detail</p>
+                    </div>
+                </div>
+            </a>
+        }
+        
+       
+    </div>
+    <div class="hd-mg-va">
+        <a href="/Notification/NotificationList/">Tümünü Gör</a>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+﻿@using NotikaIdentityEmail.Models.IdentityModels
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model RegisterUserViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Identity Kayıt Formu</title>
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Font-->
+    <link rel="stylesheet" type="text/css" href="/colorlib-regform-35/css/nunito-font.css">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="/colorlib-regform-35/css/style.css" />
+</head>
+<body class="form-v9">
+    <div class="page-content">
+        <div class="form-v9-content" style="background-image: url('/colorlib-regform-35/images/form-v9.jpg')">
+            <form class="form-detail" method="post">
+                <h2>Yeni Kullanıcı Kaydı</h2>
+
+                <div class="form-row-total">
+                    <div class="form-row">
+                        <input type="text" class="input-text" asp-for="Name" placeholder="Adınız">
+                    </div>
+
+                    <div class="form-row">
+                        <input type="text" class="input-text" asp-for="Surname" placeholder="Soyadınız">
+                    </div>
+                </div>
+
+                <div class="form-row-total">
+                    <div class="form-row">
+                        <input type="email" class="input-text" asp-for="Email" placeholder="E-mail Adresiniz" />
+                    </div>
+
+                    <div class="form-row">
+                        <input type="text" class="input-text" asp-for="UserName" placeholder="Kullanıcı Adınız" />
+                    </div>
+                </div>
+
+                <div class="form-row-total">
+                    <div class="form-row" style="position: relative;">
+                        <input type="password" class="input-text" asp-for="Password" placeholder="Şifreniz" id="password">
+                        <button type="button" onclick="togglePassword('password')" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
+                            👁
+                        </button>
+                    </div>
+
+                    <div class="form-row" style="position: relative;">
+                        <input type="password" class="input-text" asp-for="ConfirmPassword" placeholder="Şifre Tekrar" id="confirmPassword">
+                        <button type="button" onclick="togglePassword('confirmPassword')" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
+                            👁
+                        </button>
+                    </div>
+                </div>
+
+                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
+                <div class="form-row-last">
+                    <input type="submit" class="register" value="Kayıt Ol">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword(inputId) {
+            var input = document.getElementById(inputId);
+            input.type = input.type === "password" ? "text" : "password";
+        }
+    </script>
+</body>
+</html>

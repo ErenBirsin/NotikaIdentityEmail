@@ -1,0 +1,81 @@
+﻿@model SimpleUserViewModel
+@{
+	ViewData["Title"] = "Generate";
+	Layout = "~/Views/UserLayout/Index.cshtml";
+}
+
+<div class="form-element-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="form-element-list">
+					<div class="basic-tb-hd">
+						<h2>Token Sayfası</h2>
+						<p>Parametreleri girerek token oluşturma işlemi gerçekleştirilebilir.</p>
+					</div>
+					<form method="post">
+						<div class="row">
+
+
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="form-group">
+									<div class="nk-int-st">
+										<input type="text" class="form-control" asp-for="Name" placeholder="Adınız">
+									</div>
+								</div>
+							</div>
+
+
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="form-group">
+									<div class="nk-int-st">
+										<input type="text" class="form-control" asp-for="Surname" placeholder="Soyadınız">
+									</div>
+								</div>
+							</div>
+
+
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="form-group">
+									<div class="nk-int-st">
+										<input type="text" class="form-control" asp-for="City" placeholder="Şehriniz">
+									</div>
+								</div>
+							</div>
+
+
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="form-group">
+									<div class="nk-int-st">
+										<input type="text" class="form-control" asp-for="UserName" placeholder="Kullanıcı Adınız">
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="form-group">
+									<div class="nk-int-st">
+										<button class="btn btn-success">Token Oluştur</button>
+									</div>
+								</div>
+							</div>
+
+							@if (!string.IsNullOrEmpty(Model?.Token))
+							{
+								<div class="alert alert-success mt-3">
+									<strong>Token:</strong> <br />
+									<textarea rows="5" class="form-control">@Model.Token</textarea>
+								</div>
+							}
+
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
