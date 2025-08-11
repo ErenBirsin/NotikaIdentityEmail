@@ -54,4 +54,4 @@ Desktop.ini
 $RECYCLE.BIN/
 .DS_Store
 
-
+*.cshtml linguist-language=C#
